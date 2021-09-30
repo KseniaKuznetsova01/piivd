@@ -1,7 +1,5 @@
 package githab;
 
-import java.util.ArrayList;
-
 public class Record {
     public long id;
     private String phoneNumber;

@@ -10,7 +10,6 @@ public class MyBook {
     }
 
     public ArrayList<Record> getAllRecords() {
-        // получение номера группы
         return records;
     }
 
@@ -21,14 +20,15 @@ public class MyBook {
                 throw new RecordNotFound("error");
             }
         }
-        if ((record.name == null) || (record.getPhoneNumber() == null) || (record.name.length() == 0) || (record.getPhoneNumber().length()==0) ){
+        if ((record.name == null) || (record.getPhoneNumber() == null)
+                || (record.name.length() == 0) || (record.getPhoneNumber().length()==0) ){
             throw new RecordNotValid("error");
         }
     }
 
     public void createRecord(Record record) throws PhoneNumberAlreadyExists {
             for (Record i : records) {
-                if (i.getPhoneNumber()== record.getPhoneNumber()){
+                if (i.getPhoneNumber() == record.getPhoneNumber()){
                     throw new PhoneNumberAlreadyExists("error");
                 }
             }
