@@ -55,9 +55,9 @@ public class API {
         for (int i = 0; i < webList.getLength(); i++) {
             Element cur = (Element) webList.item(i);
             if (cur.getElementsByTagName("CharCode").item(0).getTextContent().equals(currencyValue)) {
-                String name = cur.getElementsByTagName("Name").item(0).getTextContent();
-                String value = cur.getElementsByTagName("Value").item(0).getTextContent();
-                System.out.println("1 " + name + " = " + value + " Российских рублей");
+                String value = cur.getElementsByTagName("Name").item(0).getTextContent();
+                String crnc = cur.getElementsByTagName("Value").item(0).getTextContent();
+                System.out.println("1 " + value + " = " + crnc + " Российских рублей");
                 return;
             }
         }
