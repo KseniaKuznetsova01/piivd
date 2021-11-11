@@ -42,11 +42,10 @@ public class API {
 
 
 
-//        NodeList nList1 = API.getElementsByTagName("Value");
+//        NodeList webList1 = API.getElementsByTagName("Value");
 //        Node value = nList1.item(i);
 //        setValue(((Node) value).getTextContent());
-
-//        NodeList nList2 = API.getElementsByTagName("Name");
+//        NodeList webList2 = API.getElementsByTagName("Name");
 //        Node name = nList2.item(i);
 //        setName(name.getTextContent());
 
