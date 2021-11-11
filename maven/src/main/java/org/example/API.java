@@ -40,8 +40,9 @@ public class API {
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document doc = builder.parse(new InputSource(new StringReader(data)));
 
-
+//        NodeList webList = element.getElementsByTagName(tag).item(0).getChildNodes();
 //        return "1 " + name.getTextContent() + " = " + value.getTextContent() + " Российских рубля";
+
         NodeList webList = doc.getElementsByTagName("Valute");
         for (int i = 0; i < webList.getLength(); i++) {
             Element cur = (Element) webList.item(i);
