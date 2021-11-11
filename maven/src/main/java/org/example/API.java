@@ -41,15 +41,6 @@ public class API {
         Document doc = builder.parse(new InputSource(new StringReader(data)));
 
 
-
-//        NodeList webList1 = API.getElementsByTagName("Value");
-//        Node value = nList1.item(i);
-//        setValue(((Node) value).getTextContent());
-//        NodeList webList2 = API.getElementsByTagName("Name");
-//        Node name = nList2.item(i);
-//        setName(name.getTextContent());
-
-
 //        return "1 " + name.getTextContent() + " = " + value.getTextContent() + " Российских рубля";
         NodeList webList = doc.getElementsByTagName("Valute");
         for (int i = 0; i < webList.getLength(); i++) {
