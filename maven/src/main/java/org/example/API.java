@@ -7,6 +7,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.StringReader;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -28,7 +29,7 @@ public class API {
         return date;
     }
 
-    public String getCurrencyName() {
+    public String getCurrencyValue() {
         return currencyValue;
     }
     public void getRate() throws ParserConfigurationException, IOException, DataNotFoundException, SAXException {
@@ -40,16 +41,29 @@ public class API {
         Document doc = builder.parse(new InputSource(new StringReader(data)));
 
 
+
+//        NodeList nList1 = API.getElementsByTagName("Value");
+//        Node value = nList1.item(i);
+//        setValue(((Node) value).getTextContent());
+
+//        NodeList nList2 = API.getElementsByTagName("Name");
+//        Node name = nList2.item(i);
+//        setName(name.getTextContent());
+
+
+//        return "1 " + name.getTextContent() + " = " + value.getTextContent() + " Российских рубля";
         NodeList webList = doc.getElementsByTagName("Valute");
         for (int i = 0; i < webList.getLength(); i++) {
             Element cur = (Element) webList.item(i);
             if (cur.getElementsByTagName("CharCode").item(0).getTextContent().equals(currencyValue)) {
-                String value = cur.getElementsByTagName("Name").item(0).getTextContent();
-                String crnc = cur.getElementsByTagName("Value").item(0).getTextContent();
-                System.out.println("\n1 " + value + " = " + crnc + " Российских рублей");
+                String name = cur.getElementsByTagName("Name").item(0).getTextContent();
+                String value = cur.getElementsByTagName("Value").item(0).getTextContent();
+                System.out.println("1 " + name + " = " + value + " Российских рублей");
                 return;
             }
         }
+
+
         throw new DataNotFoundException();
     }
 }
